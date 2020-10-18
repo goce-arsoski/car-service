@@ -1,8 +1,8 @@
-class CarController < ApplicationController
+class CarsController < ApplicationController
   before_action :find_car, only: [:show, :edit, :update, :destroy]
 
   def index
-    @car = Car.all.order('created_at DESC')
+    @cars = Car.all.order('created_at DESC')
   end
 
   def show
@@ -13,14 +13,14 @@ class CarController < ApplicationController
   end
 
   def create
-    @car = Car.new(car_params)
+    @car = Car.new(cars_params)
   end
 
   def edit
   end
 
   def update
-    if @car.update(car_params)
+    if @car.update(cars_params)
       redirect_to @car
     else
       render :edit
