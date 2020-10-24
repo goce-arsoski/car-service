@@ -1,0 +1,33 @@
+<%# <%= link_to("New Service", new_service_path) %>
+<%= link_to("Edit Car", edit_car_path(@car)) %>
+<%= link_to 'Show All Cars', cars_path(@cars) %>
+<article id="contact">
+    <div class="formContainer">
+<h2><%= @car.brand %> - <%= @car.model %> Information </h2>
+
+
+<table>
+    <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Vin Number</th>
+        <th>Mileage</th>
+        <th>Transmission</th>
+        <th>Drive Type</th>
+        <th>Color</th>
+    </tr>
+    <tr>
+        <td><%= @car.brand %></td>
+        <td><%= @car.model %></td>
+        <td><%= @car.year %></td>
+        <td><%= @car.vin %></td>
+        <td><%= @car.mileage %></td>
+        <td><%= @car.transmission %></td>
+        <td><%= @car.drive_type %></td>
+        <td><%= @car.color %></td>
+    </tr>
+</table>
+<br />
+</div>
+</article>
