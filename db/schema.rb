@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_18_212413) do
+ActiveRecord::Schema.define(version: 2020_10_29_221327) do
 
   create_table "cars", force: :cascade do |t|
     t.string "brand"
@@ -21,6 +21,38 @@ ActiveRecord::Schema.define(version: 2020_10_18_212413) do
     t.string "transmission"
     t.string "drive_type"
     t.string "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "parts", force: :cascade do |t|
+    t.string "part_number"
+    t.string "part_name"
+    t.integer "cost"
+    t.string "part_designation"
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "vendor_id"
+    t.index ["vendor_id"], name: "index_parts_on_vendor_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "date"
+    t.integer "car_kilometers"
+    t.string "work_description"
+    t.integer "work_hours"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "car_id"
+    t.index ["car_id"], name: "index_services_on_car_id"
+  end
+
+  create_table "vendors", force: :cascade do |t|
+    t.string "name"
+    t.string "contact"
+    t.string "website"
+    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -41,7 +41,7 @@ class VendorsController < ApplicationController
   private
 
   def vendor_params
-    params.require(:vendor).permit(:name, :contact, :website, :locations)
+    params.require(:vendor).permit(:name, :contact, :website, :location)
   end
 
   def find_vendor
