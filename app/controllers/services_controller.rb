@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :find_service, only: [:show, :edit, :update, :destroy
+  before_action :find_service, only: [:show, :edit, :update, :destroy]
 
   def index
     @services = Services.all.order('created_at DESC')
