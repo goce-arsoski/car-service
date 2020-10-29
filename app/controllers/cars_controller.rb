@@ -1,7 +1,9 @@
 class CarsController < ApplicationController
+  # before_action :require_login
   before_action :find_car, only: [:show, :edit, :update, :destroy]
 
   def index
+    # current_user.cars
     @cars = Car.all.order('created_at DESC')
   end
 
