@@ -1,10 +1,9 @@
 class CarsController < ApplicationController
-  # before_action :require_login
+  before_action :require_login
   before_action :find_car, only: [:show, :edit, :update, :destroy]
 
   def index
-    # current_user.cars
-    @cars = Car.all.order('created_at DESC')
+    @cars = current_user.cars.order('created_at DESC')
   end
 
   def show
@@ -15,7 +14,7 @@ class CarsController < ApplicationController
   end
 
   def create
-    @car = Car.create(car_params)
+    @car = current_user.cars.new(car_params)
 
     if @car.save
       redirect_to @car

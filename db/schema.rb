@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2020_10_29_224716) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.string "date"
-    t.integer "car_kilometers"
+    t.string "service_date"
+    t.integer "service_mileage"
     t.string "work_description"
     t.integer "work_hours"
     t.datetime "created_at", precision: 6, null: false

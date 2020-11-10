@@ -1,2 +1,18 @@
-<h1>Services#edit</h1>
-<p>Find me in app/views/services/edit.html.erb</p>
+<article id="service">
+  <div class="formContainer">
+    <h1>Edit your car service</h1>
+
+    <%= form_with model: [@car, @service] do |form| %>
+      <p> Service date: <%= form.text_field :service_date, class: "textfields" %></p>
+      <p> Service mileage: <%= form.text_field :service_mileage, class: "textfields" %></p>
+      <p> Work description: <%= form.text_area :work_description, class: "textfields" %></p>
+      <p> Work hours: <%= form.text_field :work_hours, class: "textfields" %></p>
+      <ul class="actions">
+        <%= form.submit "Edit Service", class: "inputs" %>
+      </ul>
+    <% end %>
+
+    <%= link_to 'Back to Services', root_path %>
+
+  </div>
+</article>

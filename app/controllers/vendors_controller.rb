@@ -1,4 +1,5 @@
 class VendorsController < ApplicationController
+  before_action :require_login
   before_action :find_vendor, only: [:show, :edit, :update, :destroy]
 
   def index

@@ -1,4 +1,5 @@
 class PartsController < ApplicationController
+  before_action :require_login
   before_action :find_part, only: [:show, :edit, :update, :destroy]
 
   def index

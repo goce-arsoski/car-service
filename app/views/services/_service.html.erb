@@ -1,0 +1,29 @@
+<%= link_to 'Edit Service', edit_car_service_path(service.car, service) %>
+<%= link_to 'Delete Service', car_service_path(service.car, service), class: 'card-footer-item has-text-weight-bold',
+  method: :delete, data: { confirm: 'Are you sure you want to delete this car?' } %>
+
+<article id="contact">
+  <div class="formContainer">
+    <h2><%= @car.brand %> - <%= @car.model %> Service <%= counter %></h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Mileage</th>
+          <th scope="col">Description</th>
+          <th scope="col">Hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= service.service_date %></td>
+          <td><%= service.service_mileage %></td>
+          <td><%= service.work_description %></td>
+          <td><%= service.work_hours %></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+  </div>
+</article>
